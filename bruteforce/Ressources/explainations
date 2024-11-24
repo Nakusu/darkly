@@ -1,0 +1,17 @@
+In precedent breach (sql_injection_1) we got an username "GetThe" and firstname Flag (try members id 5)
+
+On the login page we seen any limitation about post request (not captcha, cooldown)
+
+Let's try to brute force it!
+
+Download a passwords list -> https://github.com/duyet/bruteforce-database/blob/master/1000000-password-seclists.txt
+
+Launch the python script, it will try all of the list :)
+
+The password is "shadow"
+
+We got the flag ;)
+
+Add a ratelimite or a captcha on the login page and don't use that king of password
+
+curl 'http://192.168.1.140:8080/index.php?page=feedback' --data-raw 'txtName=fesfe&mtxtMessage=Hibou&btnSign: Sign Guestbook'

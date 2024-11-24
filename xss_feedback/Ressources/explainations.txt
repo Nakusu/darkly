@@ -1,0 +1,14 @@
+On the feedback page, we can see a form which contain name and message fields.
+
+Let's try to inject some JS/HTML code for make it executable when other visitors display our comments.
+
+The server replace the field <> and </>
+
+Inject this <img src="a" onerror="alert('hibou')"> into the name field and increase it size
+
+it't work but the server doesn't display any flag...
+
+after some try when we put just script into name field, the server display the flag
+
+Don't render directly backend content. Framework like VueJs or React (Library) catch it by default.
+You can encode you content in backend for exemple with htmlspecialchars in php.

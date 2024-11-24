@@ -1,0 +1,16 @@
+When we click on the button "Add a image" we are redirect on the page upload.
+
+Let's try to upload some image, png not work, svg not work, something else than image and we got "Your image was not uploaded."
+Only jpg image work!
+
+When we try to add the extension .jpg to any file, the upload work the file validation don't check file mime type...
+
+We try to fake the file Content-Type with the type field in CURL (https://gist.github.com/z11i/fdd874573fc4956c3ee3aad164eddbfe)
+
+Try this curl request :
+
+curl -i -X POST -F Upload=Upload -F "uploaded=@test.php;type=image/jpg" http://[host]:80/?page=upload | grep flag
+
+We got it :)
+
+Check the file mime type and the extension in both and never execute user file on server!
