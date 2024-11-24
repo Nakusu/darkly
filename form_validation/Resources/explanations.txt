@@ -1,0 +1,11 @@
+When we go to the "survey" page, we can see a form when multiple select inputs.
+
+Select inputs display option between 1-10, editing some of they and the form will submit a POST request with two inputs "sujet" and "valeur" (valeur is the edited field)
+
+Try to send the post value with "valeur" different than allowed values (more than 10, the form must check if the field is numeric) with a curl request
+
+curl 'http://192.168.1.140:8080/index.php?page=survey' --data-raw 'sujet=2&valeur=11' | grep flag
+
+And we got the flat :)
+
+You must protect your form, don't trust any user!

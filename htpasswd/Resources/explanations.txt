@@ -1,0 +1,11 @@
+We inspect the robots.txt page and we got Disallow: /.hidden and /whatever which contain a htpasswd file...
+
+This file contain root:437394baff5aa33daa618be47b75cb49
+
+437394baff5aa33daa618be47b75cb49 is an md5 hash decrypted we got qwerty123@
+
+Try to login on the /admin path with root and qwerty123@
+
+That work!
+
+Protect your public directory, block display hidden file and explore your directory with an apache rule

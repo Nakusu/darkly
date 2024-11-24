@@ -1,0 +1,8 @@
+In the footer we can see socials account redirection display, but when we inspect the href url we can see the redirection pass by an page "redirect" which excute the redirection with the query input "site".
+This input is not secure, try to define its value as "test"
+
+Test this get request -> http://192.168.1.140:8080/index.php?page=redirect&site=test
+
+We got the flag!
+
+Don't use unverified input, don't trust user!

