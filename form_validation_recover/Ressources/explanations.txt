@@ -11,3 +11,4 @@ curl 'http://192.168.1.140:8080/?page=recover' --data-raw 'mail=hibou%40gmail.co
 We got the flag ;)
 
 Another time, don't trust user at all. Don't put backend logic into frontend.
+In correct case the email variable is a ENV variable into backend logic and use it when the form is submit.

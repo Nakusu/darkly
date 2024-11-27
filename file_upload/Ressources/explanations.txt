@@ -1,7 +1,6 @@
 When we click on the button "Add a image" we are redirect on the page upload.
 
-Let's try to upload some image, png not work, svg not work, something else than image and we got "Your image was not uploaded."
-Only jpg image work!
+Let's try to upload some image, png not work, svg not work. Something else than jpg and we got "Your image was not uploaded."
 
 When we try to add the extension .jpg to any file, the upload work the file validation don't check file mime type...
 

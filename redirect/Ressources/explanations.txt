@@ -6,3 +6,4 @@ Test this get request -> http://192.168.1.140:8080/index.php?page=redirect&site=
 We got the flag!
 
 Don't use unverified input, don't trust user!
+Use directly redirect url into your footer ? (I don't understand why pass by another page for make redirection)
